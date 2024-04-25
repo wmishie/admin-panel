@@ -1,0 +1,4 @@
+2024-04-16 22:55:46 - Login attempt with invalid email or student ID: Email - kbag@gmail.com, Student ID - 8887
+2024-04-16 22:56:10 - Registration attempt with existing email or student ID: Email - vickiewangosh@gmail.com, Student ID - 34
+2024-04-16 23:00:02 - Registration attempt with existing email or student ID: Email - vickiewangosh@gmail.com, Student ID - 34f
+2024-04-18 20:18:37 - Login attempt with invalid email or student ID: Email - 2sunnyy@gmail.com, Student ID - 	12345

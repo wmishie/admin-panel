@@ -1,0 +1,218 @@
+.container {
+    display: flex;
+}
+
+.left-panel,
+.right-panel {
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: width 0.5s ease; /* Smooth transition for panel width */
+    background-color: #f9f9f9; /* Panel background color */
+    border-radius: 15px;
+}
+
+.left-panel {
+    width: 50%; /* Initial width for each panel */
+    border-right: 2px solid #e0e0e0; /* Separator line */
+}
+
+.right-panel {
+    width: calc(50% - 2px); /* Adjust width for separator line */
+}
+
+.arrow {
+    position: fixed;
+    top: calc(50% - 20px); /* Center vertically */
+    width: 40px; /* Adjust width of arrow */
+    height: 40px; /* Adjust height of arrow */
+    cursor: pointer;
+    background-color: #007bff; /* Arrow background color */
+    border-radius: 50%; /* Make arrow circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Arrow color */
+    font-size: 20px; /* Arrow size */
+    transition: background-color 0.3s ease; /* Smooth color transition */
+    z-index: 999; /* Ensure arrows are above content */
+}
+
+.arrow:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
+
+.left-arrow {
+    left: 0;
+}
+
+.right-arrow {
+    right: 0;
+}
+
+/* Style links as buttons */
+.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.button-link:hover {
+    background-color: #0056b3;
+}
+
+/* Style navigation links */
+.nav-link {
+    display: block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #f0f0f0;
+}
+/* Style for admin panel */
+#admin-panel {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+}
+
+#admin-panel h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#admin-panel ul {
+    list-style: none;
+    padding: 0;
+}
+
+#admin-panel ul li {
+    margin-bottom: 10px;
+}
+
+#admin-panel ul li a {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
+}
+
+#admin-panel ul li a:hover {
+    background-color: #e0e0e0;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+h2 {
+    color: #333;
+}
+label {
+    font-weight: bold;
+}
+input[type="text"], input[type="password"], select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
+
+.container {
+    display: flex;
+}
+
+.left-panel,
+.right-panel {
+    flex: 1;
+    padding: 20px;
+}
+
+.component-container {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.right-panel {
+    background-color: #f9f9f9;
+}
+
+.component-container h3 {
+    margin-top: 0;
+}
+
+ /* Style for the smaller hamburger icon */
+ .hamburger {
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px;
+    background-color: #ddd;
+    border: 1px solid #999;
+    border-radius: 5px;
+}
+
+/* Style for the lines of the smaller hamburger icon */
+.hamburger .line {
+    width: 20px;
+    height: 2px;
+    background-color: #333;
+    margin: 4px 0;
+}
+
+/* Style for the dropdown menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #999;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Style to show the dropdown menu */
+.show {
+    display: block;
+}

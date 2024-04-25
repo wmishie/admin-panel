@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Numerology Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 50px;
+    }
+    
+    h1 {
+      color: #333;
+      margin-bottom: 30px;
+    }
+    
+    .question {
+      margin-bottom: 30px;
+      text-align: left;
+    }
+    
+    .question h2 {
+      color: #444;
+    }
+    
+    .answer {
+      margin-bottom: 10px;
+    }
+    
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+    
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    
+    .result {
+      margin-top: 30px;
+      font-weight: bold;
+    }
+    
+    .correct-answer {
+      color: #4CAF50;
+    }
+    
+    .incorrect-answer {
+      color: #f44336;
+    }
+  </style>
+</head>
+<body>
+  <h1>Numerology Quiz</h1>
+  
+  <div class="question">
+    <h2>What does your birth date say about your personality?</h2>
+    <div class="answer">
+      <input type="radio" name="question1" value="a">a) It determines your lucky number<br>
+      <input type="radio" name="question1" value="b">b) It reveals hidden talents and strengths<br>
+      <input type="radio" name="question1" value="c">c) It predicts your future career<br>
+      <input type="radio" name="question1" value="d">d) It has no significance
+    </div>
+  </div>
+  
+  <div class="question">
+    <h2>How can numerology help in making important life decisions?</h2>
+    <div class="answer">
+      <input type="radio" name="question2" value="a">a) By providing insights into your personal traits and tendencies<br>
+      <input type="radio" name="question2" value="b">b) By giving precise lottery numbers<br>
+      <input type="radio" name="question2" value="c">c) By determining the best time to travel<br>
+      <input type="radio" name="question2" value="d">d) Numerology has no practical use
+    </div>
+  </div>
+  
+  <div class="question">
+    <h2>What significance do repeating numbers hold in numerology?</h2>
+    <div class="answer">
+      <input type="radio" name="question3" value="a">a) They indicate a message from the universe<br>
+      <input type="radio" name="question3" value="b">b) They represent bad luck<br>
+      <input type="radio" name="question3" value="c">c) They have no special meaning<br>
+      <input type="radio" name="question3" value="d">d) They signal a change or transformation
+    </div>
+  </div>
+  
+  <button onclick="gradeQuiz()">Submit</button>
+  
+  <div class="result">
+    <div id="result"></div>
+    <div id="feedback"></div>
+  </div>
+  
+  <script>
+    function gradeQuiz() {
+      var score = 0;
+      var feedback = "";
+      
+      // Check question 1
+      if (document.querySelector('input[name="question1"]:checked').value === 'b') {
+        score++;
+        feedback += '<p class="correct-answer">Question 1: Correct! Numerology can reveal hidden talents and strengths.</p>';
+      } else {
+        feedback += '<p class="incorrect-answer">Question 1: Incorrect. Numerology can reveal hidden talents and strengths.</p>';
+      }
+      
+      // Check question 2
+      if (document.querySelector('input[name="question2"]:checked').value === 'a') {
+        score++;
+        feedback += '<p class="correct-answer">Question 2: Correct! Numerology can help in making important life decisions by providing insights into personal traits.</p>';
+      } else {
+        feedback += '<p class="incorrect-answer">Question 2: Incorrect. Numerology can help in making important life decisions by providing insights into personal traits.</p>';
+      }
+      
+      // Check question 3
+      if (document.querySelector('input[name="question3"]:checked').value === 'a') {
+        score++;
+        feedback += '<p class="correct-answer">Question 3: Correct! Repeating numbers in numerology often indicate a message from the universe.</p>';
+      } else {
+        feedback += '<p class="incorrect-answer">Question 3: Incorrect. Repeating numbers in numerology often indicate a message from the universe.</p>';
+      }
+      
+      // Display the result
+      var resultElement = document.getElementById('result');
+      resultElement.textContent = 'Your score: ' + score + '/3';
+      
+      var feedbackElement = document.getElementById('feedback');
+      feedbackElement.innerHTML = feedback;
+    }
+  </script>
+</body>
+</html>
