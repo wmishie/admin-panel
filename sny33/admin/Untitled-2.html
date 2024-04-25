@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Hamburger Icon</title>
+    <style>
+        /* Style for the smaller hamburger icon */
+        .hamburger {
+            display: inline-block;
+            cursor: pointer;
+            padding: 5px;
+            background-color: #ddd;
+            border: 1px solid #999;
+            border-radius: 5px;
+        }
+
+        /* Style for the lines of the smaller hamburger icon */
+        .hamburger .line {
+            width: 20px;
+            height: 2px;
+            background-color: #333;
+            margin: 4px 0;
+        }
+
+        /* Style for the dropdown menu */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 30px;
+            left: 0;
+            background-color: #fff;
+            border: 1px solid #999;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        /* Style to show the dropdown menu */
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Smaller Hamburger icon -->
+<div class="hamburger" onclick="toggleDropdown()">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+</div>
+
+<!-- Dropdown menu -->
+<div class="dropdown-menu" id="dropdownMenu">
+    <!-- Dropdown content here -->
+    <p>Dropdown content goes here...</p>
+</div>
+
+<script>
+    // Function to toggle the dropdown menu
+    function toggleDropdown() {
+        var dropdownMenu = document.getElementById("dropdownMenu");
+        dropdownMenu.classList.toggle("show");
+    }
+
+    // Close the dropdown menu if clicked outside of it
+    window.onclick = function(event) {
+        var dropdownMenu = document.getElementById("dropdownMenu");
+        if (!event.target.matches('.hamburger') && !event.target.matches('.dropdown-menu')) {
+            dropdownMenu.classList.remove('show');
+        }
+    }
+</script>
+
+</body>
+</html>

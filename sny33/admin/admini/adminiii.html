@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <style>
+        /* Style for buttons */
+        .button-link {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-link:hover {
+            background-color: #0056b3;
+        }
+         /* Navigation Panel styles */
+        .navigation-panel {
+            background-color: #333;
+            overflow: hidden;
+        }
+        .nav-link {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .nav-link:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+<div id="dashboard" style="display:none">
+    <div class="navigation-panel">
+        <a href="#" class="nav-link">Admin Dashboard</a>
+        <a href="#" class="nav-link">Manage Users</a>
+        <a href="#" class="nav-link">User Lists</a>
+    </div>
+
+    <h1>Welcome to Admin Dashboard</h1>
+
+    <!-- Beautiful button links to other pages -->
+    <a href="#" class="button-link">Manage Users</a>
+    <a href="user_logs.php" class="button-link">Logs</a>
+    <a href="#" class="button-link">User Lists</a>
+    <button class="button-link" onclick="logout()">Admin logout</button>
+</div>
+<script>
+    let adminPassword = localStorage.getItem('adminPassword');
+
+    function accessDashboard() {
+        if (!adminPassword) {
+            const newPassword = prompt('Set Admin Password:');
+            if (newPassword) {
+                adminPassword = newPassword;
+                localStorage.setItem('adminPassword', adminPassword);
+                document.getElementById('dashboard').style.display = 'block';
+            }
+        } else {
+            const accessPassword = showPasswordPrompt('Enter Admin Password:');
+            if (accessPassword === adminPassword) {
+                document.getElementById('dashboard').style.display = 'block'; // Display the dashboard
+            } else {
+                alert('Incorrect password! Access denied.');
+            }
+        }
+    }
+
+    // Function to prompt for password with hidden input
+    function showPasswordPrompt(message) {
+        const passwordInput = prompt(message);
+        return passwordInput;
+    }
+
+    // Function to logout
+    function logout() {
+        localStorage.removeItem('adminPassword');
+        document.getElementById('dashboard').style.display = 'none';
+    }
+
+    // Automatically prompt for password on page load
+    window.onload = function() {
+        accessDashboard();
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+    <link rel="stylesheet" href="css/edit-user.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Edit User</h2>
+        <form id="edit-user-form" onsubmit="editUser(event)">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter username" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter email" required><br><br>
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+
+    <script>
+        function editUser(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Retrieve user input
+            var username = document.getElementById('username').value;
+            var email = document.getElementById('email').value;
+
+            // Perform the editing process (e.g., update user details in database)
+
+            // Optionally, you can show a success message or perform other actions
+            alert("User details updated successfully!");
+        }
+    </script>
+</body>
+</html>
